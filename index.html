@@ -282,6 +282,29 @@ footer{border-top:1px solid var(--line-soft);padding:48px 0 34px;background:var(
 .gift-title{display:block;font-family:var(--sans);font-size:15px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:7px}
 .gift-text{display:block;font-family:var(--serif);font-size:1.08rem;line-height:1.4;color:var(--ink)}
 @media(max-width:600px){.gift-title{font-size:13.5px;letter-spacing:.14em}.gift-text{font-size:1rem}}
+
+/* PAGES LÉGALES */
+.legal-overlay{position:fixed;inset:0;z-index:110;display:flex;align-items:center;justify-content:center;padding:20px;background:rgba(22,19,14,.6);backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:opacity .35s ease,visibility .35s}
+.legal-overlay.open{opacity:1;visibility:visible}
+.legal-box{position:relative;width:100%;max-width:820px;max-height:90vh;overflow-y:auto;background:var(--bg);border:1px solid rgba(168,130,46,.4);border-radius:12px;padding:48px 44px 40px;box-shadow:0 40px 90px rgba(28,20,8,.35);transform:translateY(18px) scale(.985);transition:transform .45s cubic-bezier(.2,.7,.3,1)}
+.legal-overlay.open .legal-box{transform:none}
+.legal-box h3{font-size:clamp(1.8rem,3.6vw,2.4rem);text-transform:uppercase;letter-spacing:.04em;margin:10px 0 6px;text-align:center}
+.legal-box .kicker{display:block;text-align:center}
+.legal-date{text-align:center;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:30px}
+.legal-box h4{font-family:var(--sans);font-size:12.5px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:30px 0 10px;padding-top:18px;border-top:1px solid var(--line-soft)}
+.legal-box p,.legal-box li{font-size:.95rem;line-height:1.75;color:var(--ink-soft,#3d3a33)}
+.legal-box p{margin:0 0 12px}
+.legal-box ul{margin:0 0 12px;padding-left:20px}
+.legal-box li{margin-bottom:6px}
+.legal-box strong{color:var(--ink);font-weight:600}
+.legal-box a{color:var(--gold);text-decoration:underline;text-underline-offset:3px}
+.legal-close{position:sticky;top:-30px;float:right;z-index:3;margin:-30px -24px 0 0;background:var(--bg);border:none;cursor:pointer;font-size:32px;line-height:1;color:var(--muted);width:40px;height:40px;border-radius:50%;transition:color .3s}
+.legal-close:hover{color:var(--gold)}
+.fill{background:rgba(217,192,126,.4);outline:1px dashed var(--gold);outline-offset:1px;padding:0 4px;border-radius:2px;color:var(--ink)}
+@media(max-width:600px){
+  .legal-box{padding:44px 22px 30px}
+  .legal-overlay{padding:12px}
+}
 </style>
 </head>
 <body>
@@ -468,12 +491,117 @@ footer{border-top:1px solid var(--line-soft);padding:48px 0 34px;background:var(
       <div class="foot-cols">
         <div class="foot-col"><h5>Collection</h5><a href="#volumes">ÉMIA BODY</a><a href="#volumes">ÉMIA NUTRITION</a><a href="#volumes">ÉMIA GLOW</a><a href="#volumes">ÉMIA BODY HOME</a><a href="#pack">ÉMIA Method</a><a href="#pack">ÉMIA METHOD HOME</a></div>
         <div class="foot-col"><h5>Infos</h5><a href="#faq">FAQ</a><a href="#acces">Accès</a><a href="https://www.instagram.com/emiegms" target="_blank" rel="noopener">Contact · Instagram</a></div>
-        <div class="foot-col"><h5>Légal</h5><a href="#">Mentions légales</a><a href="#">CGV</a><a href="#">Confidentialité</a></div>
+        <div class="foot-col"><h5>Légal</h5><a href="#mentions-legales" data-legal="mentions-legales">Mentions légales</a><a href="#">CGV</a><a href="#confidentialite" data-legal="confidentialite">Confidentialité</a></div>
       </div>
     </div>
     <div class="foot-bottom"><span>© 2026 ÉMIA Collection — Tous droits réservés</span><span>Évolution · Mindset · Intention · Alignment</span></div>
   </div>
 </footer>
+
+<!-- MENTIONS LÉGALES -->
+<div class="legal-overlay" id="legal-mentions" aria-hidden="true">
+  <div class="legal-box" role="dialog" aria-modal="true" aria-labelledby="mlTitle">
+    <button type="button" class="legal-close" data-close-legal aria-label="Fermer">×</button>
+    <span class="kicker">ÉMIA</span>
+    <h3 id="mlTitle">Mentions <span class="italic">légales</span></h3>
+    <p class="legal-date">Dernière mise à jour : 3 novembre 2026</p>
+
+    <h4>1. Éditeur du site</h4>
+    <p>Le présent site est édité par <strong>Emilie Gomes</strong>, entrepreneur individuel (micro entreprise, catégorie juridique 1000), immatriculée sous le numéro SIRET 987 613 254 00042.</p>
+    <p>Adresse : 43 rue du Petit Bois, 43200 Saint-Maurice-de-Lignon, France.<br>
+    Téléphone : <a href="tel:+33635530513">06 35 53 05 13</a><br>
+    Email : <a href="mailto:contact@xn--mia-9la.com">contact@émia.com</a><br>
+    TVA non applicable, article 293 B du CGI.</p>
+
+    <h4>2. Directeur de la publication</h4>
+    <p>Emilie Gomes, joignable à l'adresse email ci-dessus.</p>
+
+    <h4>3. Hébergement</h4>
+    <p>Le site est hébergé par GitHub Pages (pages.github.com), service de GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.</p>
+    <p>La vente et la livraison des ebooks sont assurées via la plateforme Systeme.io, qui héberge les pages de commande et gère l'accès aux produits numériques.</p>
+
+    <h4>4. Nature des produits</h4>
+    <p>Les produits proposés sur ce site (ÉMIA BODY, ÉMIA NUTRITION, ÉMIA GLOW, ÉMIA BODY HOME et les packs ÉMIA Method) sont des contenus numériques à visée éducative et de bien être. Ils ne remplacent en aucun cas un avis, un diagnostic ou un suivi médical. Avant de commencer un programme sportif ou alimentaire, il est recommandé de consulter un professionnel de santé, en particulier en cas de pathologie, de grossesse ou de doute sur ton état de santé.</p>
+
+    <h4>5. Propriété intellectuelle</h4>
+    <p>L'ensemble des contenus du site et des ebooks (textes, programmes, visuels, logos, marque ÉMIA, mise en page) est protégé par le droit d'auteur et le droit des marques. Toute reproduction, représentation, diffusion, revente ou partage, même partiel, sans autorisation écrite préalable de l'éditeur est interdit. L'achat d'un ebook donne un droit d'usage strictement personnel.</p>
+
+    <h4>6. Responsabilité</h4>
+    <p>L'éditeur s'efforce de fournir des informations exactes et à jour, mais ne garantit ni l'exhaustivité ni l'absence d'erreur. Les résultats dépendent de chaque personne, de sa régularité et de sa situation, et ne peuvent être garantis. L'éditeur ne saurait être tenu responsable d'une interruption momentanée du site ou d'un usage inadapté des contenus.</p>
+
+    <h4>7. Liens externes</h4>
+    <p>Le site peut contenir des liens vers des sites tiers (notamment Instagram et la plateforme de paiement). L'éditeur n'exerce aucun contrôle sur leur contenu et décline toute responsabilité à leur sujet.</p>
+
+    <h4>8. Données personnelles</h4>
+    <p>Le traitement de tes données personnelles est détaillé dans notre <a href="#confidentialite" data-legal="confidentialite">Politique de confidentialité</a>.</p>
+
+    <h4>9. Droit applicable</h4>
+    <p>Le site et ses mentions sont soumis au droit français. En cas de litige, et à défaut de solution amiable, les tribunaux français seront compétents, sous réserve des règles protégeant les consommateurs.</p>
+  </div>
+</div>
+
+<!-- POLITIQUE DE CONFIDENTIALITÉ -->
+<div class="legal-overlay" id="legal-privacy" aria-hidden="true">
+  <div class="legal-box" role="dialog" aria-modal="true" aria-labelledby="pcTitle">
+    <button type="button" class="legal-close" data-close-legal aria-label="Fermer">×</button>
+    <span class="kicker">ÉMIA</span>
+    <h3 id="pcTitle">Politique de <span class="italic">confidentialité</span></h3>
+    <p class="legal-date">Dernière mise à jour : 3 novembre 2026</p>
+
+    <p>Ta vie privée compte. Cette page t'explique quelles données personnelles nous collectons, pourquoi, combien de temps nous les gardons et comment exercer tes droits, conformément au Règlement général sur la protection des données (RGPD) et à la loi Informatique et Libertés.</p>
+
+    <h4>1. Responsable du traitement</h4>
+    <p>Emilie Gomes, entrepreneur individuel (SIRET 987 613 254 00042), 43 rue du Petit Bois, 43200 Saint-Maurice-de-Lignon, France.<br>
+    Contact : <a href="mailto:contact@xn--mia-9la.com">contact@émia.com</a></p>
+
+    <h4>2. Données collectées</h4>
+    <ul>
+      <li><strong>Lors d'une commande :</strong> nom, prénom, adresse email, adresse de facturation, pays, historique d'achat. Les données de paiement (carte bancaire) sont saisies directement chez le prestataire de paiement et ne sont jamais stockées par nous.</li>
+      <li><strong>Lors d'un contact :</strong> les informations que tu nous transmets par email ou par message privé Instagram.</li>
+      <li><strong>Données techniques :</strong> adresse IP et informations de navigation, traitées par GitHub, notre hébergeur, et par nos prestataires pour le fonctionnement et la sécurité du service.</li>
+    </ul>
+    <p>Nous ne collectons aucune donnée de santé via ce site et ne te demandons jamais d'en fournir pour acheter un ebook.</p>
+
+    <h4>3. Pourquoi nous utilisons tes données</h4>
+    <ul>
+      <li><strong>Traiter ta commande et te livrer ton ebook</strong> (exécution du contrat).</li>
+      <li><strong>Te donner accès à ton espace et à tes contenus</strong> (exécution du contrat).</li>
+      <li><strong>Répondre à tes questions</strong> (intérêt légitime).</li>
+      <li><strong>Respecter nos obligations légales</strong>, notamment comptables et fiscales (obligation légale).</li>
+      <li><strong>T'envoyer des emails d'information ou des offres ÉMIA</strong>, uniquement si tu y as consenti ou, pour nos clientes, pour des produits similaires. Tu peux te désinscrire à tout moment via le lien présent dans chaque email.</li>
+    </ul>
+
+    <h4>4. Destinataires et sous traitants</h4>
+    <p>Tes données sont accessibles uniquement à l'équipe ÉMIA et aux prestataires strictement nécessaires au service :</p>
+    <ul>
+      <li>la plateforme Systeme.io, pour les pages de commande, la livraison des produits numériques et l'envoi des emails ;</li>
+      <li>les prestataires de paiement proposés lors du règlement, selon le moyen de paiement choisi ;</li>
+      <li>notre hébergeur GitHub (service GitHub Pages), situé aux États Unis, et nos outils de messagerie.</li>
+    </ul>
+    <p>Nous ne vendons jamais tes données. Certains de ces prestataires, dont notre hébergeur GitHub, sont situés hors de l'Union européenne, notamment aux États Unis. Ces transferts sont encadrés par les garanties prévues par le RGPD (décision d'adéquation ou clauses contractuelles types).</p>
+
+    <h4>5. Durée de conservation</h4>
+    <ul>
+      <li>Données de commande et de facturation : 10 ans, conformément aux obligations comptables.</li>
+      <li>Données de prospection et d'inscription aux emails : 3 ans après ton dernier contact avec nous, ou jusqu'à ta désinscription.</li>
+      <li>Échanges par email ou messagerie : le temps nécessaire au traitement de ta demande, puis archivage limité.</li>
+    </ul>
+
+    <h4>6. Cookies et traceurs</h4>
+    <p>Cette page n'utilise aucun cookie publicitaire ni outil de mesure d'audience. Pour afficher les polices de caractères, elle charge des fichiers depuis les serveurs de Google Fonts, ce qui transmet ton adresse IP à Google. Les pages de commande hébergées sur Systeme.io peuvent utiliser leurs propres cookies, nécessaires au fonctionnement de la commande, dont la gestion est détaillée par la plateforme.</p>
+
+    <h4>7. Tes droits</h4>
+    <p>Tu disposes d'un droit d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité sur tes données, ainsi que du droit de retirer ton consentement à tout moment et de définir des directives sur le sort de tes données après ton décès.</p>
+    <p>Pour exercer ces droits, écris à <a href="mailto:contact@xn--mia-9la.com">contact@émia.com</a>. Nous répondons dans un délai maximum d'un mois, et nous pouvons te demander un justificatif d'identité en cas de doute.</p>
+    <p>Si tu estimes que tes droits ne sont pas respectés, tu peux déposer une réclamation auprès de la CNIL (cnil.fr).</p>
+
+    <h4>8. Sécurité</h4>
+    <p>Nous mettons en œuvre des mesures raisonnables pour protéger tes données : paiement sécurisé chez un prestataire spécialisé, accès restreint et prestataires reconnus. Aucun système n'étant infaillible, nous t'informerons en cas de violation de données susceptible de te concerner.</p>
+
+    <h4>9. Mise à jour de cette politique</h4>
+    <p>Cette politique peut évoluer, par exemple si nous ajoutons de nouveaux outils. La date de dernière mise à jour figure en haut de cette page.</p>
+  </div>
+</div>
 
 <!-- CHOIX DU PACK -->
 <div class="choice-overlay" id="choice" aria-hidden="true">
@@ -513,6 +641,26 @@ document.getElementById('openChoice').addEventListener('click',()=>toggleChoice(
 document.getElementById('closeChoice').addEventListener('click',()=>toggleChoice(false));
 choice.addEventListener('click',e=>{if(e.target===choice)toggleChoice(false)});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')toggleChoice(false)});
+const legalMap={'mentions-legales':'legal-mentions','confidentialite':'legal-privacy'};
+function closeLegal(){
+  document.querySelectorAll('.legal-overlay.open').forEach(o=>{o.classList.remove('open');o.setAttribute('aria-hidden','true')});
+  document.body.style.overflow='';
+  if(legalMap[location.hash.slice(1)]) history.replaceState(null,'',location.pathname+location.search);
+}
+function openLegal(key){
+  const el=document.getElementById(legalMap[key]); if(!el) return;
+  document.querySelectorAll('.legal-overlay.open').forEach(o=>o.classList.remove('open'));
+  el.classList.add('open'); el.setAttribute('aria-hidden','false');
+  el.querySelector('.legal-box').scrollTop=0;
+  document.body.style.overflow='hidden';
+  history.replaceState(null,'','#'+key);
+}
+document.querySelectorAll('[data-legal]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();openLegal(a.dataset.legal)}));
+document.querySelectorAll('[data-close-legal]').forEach(b=>b.addEventListener('click',closeLegal));
+document.querySelectorAll('.legal-overlay').forEach(o=>o.addEventListener('click',e=>{if(e.target===o)closeLegal()}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLegal()});
+window.addEventListener('hashchange',()=>{const k=location.hash.slice(1); if(legalMap[k]) openLegal(k)});
+if(legalMap[location.hash.slice(1)]) openLegal(location.hash.slice(1));
 document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>{
   const it=q.parentElement,o=it.classList.contains('open');
   document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
