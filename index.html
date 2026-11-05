@@ -160,7 +160,14 @@ section{position:relative;z-index:2}
 .price-note{font-size:10.5px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
 
 /* VOLUMES */
-.prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:stretch}
+.prod-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;align-items:stretch}
+@media(min-width:1001px){
+  .prod-grid{width:min(1320px,100vw - 48px);margin-left:calc((100% - min(1320px,100vw - 48px)) / 2)}
+  .prod-grid .prod-card{padding:30px 18px 26px}
+  .prod-grid .prod-card h3{font-size:1.08rem;white-space:normal;line-height:1.2;min-height:2.6em;display:flex;align-items:center;justify-content:center;text-align:center}
+  .prod-grid .prod-list li{font-size:.84rem}
+  .prod-grid .prod-label{letter-spacing:.13em;line-height:1.5;min-height:3em;display:flex;align-items:center;justify-content:center;text-align:center}
+}
 .prod-card{background:var(--paper);border:1px solid var(--line-soft);border-radius:8px;padding:34px 24px 30px;display:flex;flex-direction:column;transition:all .5s;box-shadow:0 14px 40px rgba(28,20,8,.05)}
 .prod-card:hover{transform:translateY(-8px);border-color:var(--line);box-shadow:0 26px 56px rgba(28,20,8,.1)}
 .prod-card.feat{border-color:rgba(201,168,76,.4);box-shadow:0 22px 56px rgba(168,130,46,.14)}
@@ -250,7 +257,7 @@ footer{border-top:1px solid var(--line-soft);padding:48px 0 34px;background:var(
 }
 
 /* GRILLE VOLUMES 4 COLONNES -> 2 -> 1 */
-@media(max-width:1180px){.prod-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:1000px){.prod-grid{grid-template-columns:repeat(2,1fr);gap:20px}.prod-grid .prod-card:nth-child(5){grid-column:1 / -1;width:calc(50% - 10px);justify-self:center}}
 
 /* LOGO FOOTER */
 .foot-logo-img{height:84px;width:auto;display:block;border-radius:4px;box-shadow:0 6px 18px rgba(28,20,8,.25)}
@@ -305,6 +312,7 @@ footer{border-top:1px solid var(--line-soft);padding:48px 0 34px;background:var(
   .legal-box{padding:44px 22px 30px}
   .legal-overlay{padding:12px}
 }
+@media(max-width:680px){.prod-grid{grid-template-columns:1fr}.prod-grid .prod-card:nth-child(5){grid-column:auto;width:auto}.prod-card h3{font-size:1.15rem}}
 </style>
 </head>
 <body>
@@ -333,7 +341,7 @@ footer{border-top:1px solid var(--line-soft);padding:48px 0 34px;background:var(
     <div class="hero-actions reveal d3">
       <a href="#pack" class="btn btn-gold">Commencer ma transformation <span class="arrow">→</span></a>
     </div>
-    <div class="hero-note reveal d4">Quatre volumes prestige</div>
+    <div class="hero-note reveal d4">Cinq volumes prestige</div>
     <div class="books-row reveal d2">
       <div class="book"><div class="book-cover"></div></div>
       <div class="book"><div class="book-cover"></div></div>
@@ -440,6 +448,20 @@ footer{border-top:1px solid var(--line-soft);padding:48px 0 34px;background:var(
         </ul>
         <a href="https://5f5e-contact.systeme.io/c511d57e-fd2334bc-44c1ac7a-ea369c06-a72db05d" class="btn btn-ghost">Choisir</a>
       </div>
+      <!-- THE WINTER STANDARD -->
+      <div class="prod-card reveal d1">
+        <div class="prod-label">Volume V · Discipline</div><h3>THE WINTER STANDARD</h3>
+        <div class="prod-price">9,99€</div>
+        <ul class="prod-list">
+          <li>Challenge de développement personnel · 30 jours</li>
+          <li>30 missions quotidiennes pour cultiver sa discipline</li>
+          <li>5 habitudes à intégrer dans son quotidien</li>
+          <li>Journal de réflexion &amp; exercices de mindset</li>
+          <li>Bilans hebdomadaires pour mesurer son évolution</li>
+          <li>Trackers &amp; outils d'organisation ÉMIA</li>
+        </ul>
+        <a href="https://5f5e-contact.systeme.io/winterstandard" class="btn btn-ghost">Choisir</a>
+      </div>
     </div>
   </div>
 </section>
@@ -521,7 +543,7 @@ footer{border-top:1px solid var(--line-soft);padding:48px 0 34px;background:var(
     <p>La vente et la livraison des ebooks sont assurées via la plateforme Systeme.io, qui héberge les pages de commande et gère l'accès aux produits numériques.</p>
 
     <h4>4. Nature des produits</h4>
-    <p>Les produits proposés sur ce site (ÉMIA BODY, ÉMIA NUTRITION, ÉMIA GLOW, ÉMIA BODY HOME et les packs ÉMIA Method) sont des contenus numériques à visée éducative et de bien être. Ils ne remplacent en aucun cas un avis, un diagnostic ou un suivi médical. Avant de commencer un programme sportif ou alimentaire, il est recommandé de consulter un professionnel de santé, en particulier en cas de pathologie, de grossesse ou de doute sur ton état de santé.</p>
+    <p>Les produits proposés sur ce site (ÉMIA BODY, ÉMIA NUTRITION, ÉMIA GLOW, ÉMIA BODY HOME, THE WINTER STANDARD et les packs ÉMIA Method) sont des contenus numériques à visée éducative et de bien être. Ils ne remplacent en aucun cas un avis, un diagnostic ou un suivi médical. Avant de commencer un programme sportif ou alimentaire, il est recommandé de consulter un professionnel de santé, en particulier en cas de pathologie, de grossesse ou de doute sur ton état de santé.</p>
 
     <h4>5. Propriété intellectuelle</h4>
     <p>L'ensemble des contenus du site et des ebooks (textes, programmes, visuels, logos, marque ÉMIA, mise en page) est protégé par le droit d'auteur et le droit des marques. Toute reproduction, représentation, diffusion, revente ou partage, même partiel, sans autorisation écrite préalable de l'éditeur est interdit. L'achat d'un ebook donne un droit d'usage strictement personnel.</p>
